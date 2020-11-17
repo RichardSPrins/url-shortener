@@ -6,7 +6,7 @@ const SnipView = ({ slug }) => {
 
   console.log(slug)
   const getData = async (slug) => {
-    const res = await axios.get(`http://localhost:5000/api/url/info/${slug}`)
+    const res = await axios.get(`https://snip-my-url.herokuapp.com/api/url/info/${slug}`)
     console.log(res.data)
     setSnipData(res.data.data)
   }
@@ -22,6 +22,7 @@ const SnipView = ({ slug }) => {
       <h1>Info about your Snip</h1>
       <p>OG URL: <a href={snipData?.ogUrl}>{snipData?.ogUrl}</a></p>
       <p>Snipped URL: <a href={snipData?.shortUrl}>{snipData?.shortUrl}</a></p>
+      <img src={snipData?.qrCode} />
     </div>
   )
 }

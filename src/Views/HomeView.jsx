@@ -13,7 +13,7 @@ const HomeView = ({ state, setState, success, setSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const url = urlRef.current.value
-    const res = await axios.post('http://localhost:5000/api/url/snip', { longUrl: url })
+    const res = await axios.post('https://snip-my-url.herokuapp.com/api/url/snip', { longUrl: url })
     setState(res.data.data)
     setSuccess(true)
     urlRef.current.value = ''
