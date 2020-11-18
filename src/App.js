@@ -9,7 +9,6 @@ function App() {
   const [state, setState] = React.useState(null)
   const [success, setSuccess] = React.useState(false)
   const [error, setError] = React.useState(null)
-  console.log(state)
   return (
     <Switch>
       <Route exact path="/">
